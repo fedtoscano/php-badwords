@@ -4,7 +4,7 @@ Sono andato stamattina dal mio medico, Ermogene, recentemente rientrato in Villa
     
     if(isset($_GET["wordToFilter"])){
         $wordToFilter = $_GET["wordToFilter"];
-        $fitleredStr = str_replace("$wordToFilter", "***", "$paragrafo");    
+        $fitleredStr = str_replace("$wordToFilter", "***", "$paragrafo", $count);    
     }else{
         $wordToFilter = '';
         $fitleredStr = $paragrafo;
@@ -40,6 +40,7 @@ Sono andato stamattina dal mio medico, Ermogene, recentemente rientrato in Villa
         </div>
 
         <h2>Testo Filtrato:</h2>
+        <p>Hai sostituito <?php echo $count?> istanze</p>
         <p>
             <?php echo $fitleredStr; ?>
         </p>
